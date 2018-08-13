@@ -13,11 +13,11 @@ namespace BTree.Objecto
 		public int Orden { get; set; }
 
 		public static int FixedSize { get { return 34; } }
-		// Orden + Raiz + SiguientePosicion + \r\n
+		// Raiz + Orden + SiguientePosicion + \r\n
 
 		public string ToFixedSizeString()
 		{
-			return $"{Orden.ToString("0000000000;-000000000")}|{Raiz.ToString("0000000000;-000000000")}|{SiguientePosicion.ToString("0000000000;-000000000")}\r\n";
+			return $"{Raiz.ToString("0000000000;-000000000")}|{Orden.ToString("0000000000;-000000000")}|{SiguientePosicion.ToString("0000000000;-000000000")}\r\n";
 		}
 
 		public int FixedSizeText
