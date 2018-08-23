@@ -5,16 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using BTree.Obj;
 
-namespace BTree
+namespace BTree.Util
 {
-	class Program
+	class Utilidades
 	{
-		static void Main(string[] args)
-		{
-			BT<Objeto> bT_G3 = new BT<Objeto>();
-
-
-			//bT_G3.IniciarArbol(3);
-		}
+		public static int TamañoEnteros = 10;
+		public static int ApuntadorVacío = int.MinValue;
 	}
 }

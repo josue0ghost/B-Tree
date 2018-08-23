@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BTree.Objecto
+namespace BTree.Obj
 {
-	class Encabezado
+	public class Encabezado
 	{
 		public int Raiz { get; set; }
 		public int SiguientePosicion { get; set; }

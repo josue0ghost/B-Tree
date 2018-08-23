@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BTree.Interfaz;
 
-namespace BTree.Objecto
+namespace BTree.Obj
 {
 	public class Objeto: IComparable, IFixedSizeText
 	{
