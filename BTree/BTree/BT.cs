@@ -43,7 +43,7 @@ namespace BTree
 				Posicion = 1
 			};
 
-			node.Valores = new List<T>();
+			node.Datos = new List<T>();
 			node.Hijos = new List<int>();
 
 			for (int i = 0; i < Orden; i++)
@@ -66,7 +66,7 @@ namespace BTree
 
 		//	for (int i = 0; i < Orden - 1; i++)
 		//	{
-		//		node.Valores.Add(T);
+		//		node.Datos.Add(T);
 		//	}
 		//	for (int i = 0; i < Orden; i++)
 		//	{
