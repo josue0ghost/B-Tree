@@ -10,7 +10,7 @@ using System.IO;
 
 namespace BTree
 {
-	internal class Node<T> where T: IComparable, IFixedSizeText
+	internal class Node<T> where T: IComparable, IFixedSizeText, ICreateFixedSizeText<T>
 	{
 		//Listado de elementos (nodos)
 		//Listado de hijos (nodos)
@@ -222,6 +222,71 @@ namespace BTree
 		internal void AgregarDato(T dato)
 		{
 			AgregarDato(dato, Utilidades.ApuntadorVacío);
+		}
+		#endregion
+
+		#region Procesos de eliminación y separación
+		internal void EliminarDato(T dato)
+		{
+			if (!EsHoja)
+			{
+				throw new Exception("Solo pueden eliminarse en nodos hoja");
+			}
+
+			int PosicionAEliminar = PosicionEnNodo(dato);
+
+			if (PosicionAEliminar == -1)
+			{
+				throw new ArgumentException("El dato no existe en el nodo");
+			}
+
+			for (int i = Datos.Count - 1; i > PosicionAEliminar; i--)
+			{
+				Datos[i - 1] = Datos[i];
+			}
+
+			Datos[Datos.Count - 1] = dato.CrearNulo();
+		}
+
+		internal void SepararNodo(T dato, int HijoDer, Node<T> Nodo, T DatoPorSubir)
+		{
+			if (!Lleno)
+			{
+				throw new ArgumentException("No se puede serparar porque no está lleno");
+			}
+
+			// Incrementar en una posición
+			Datos.Add(dato);
+			Hijos.Add(Utilidades.ApuntadorVacío);
+
+			// Agregarlos en orden
+			AgregarDato(dato, HijoDer, false);
+
+			// Dato a subir
+			int Medio = Orden / 2;
+			DatoPorSubir = Datos[Medio];
+			Datos[Medio] = dato.CrearNulo();
+
+			// Llenar datos que suben
+			int j = 0;
+			for (int i = Medio + 1; i < Hijos.Count; i++)
+			{
+				Nodo.Datos[j] = Datos[i];
+				Datos[i] = dato.CrearNulo();
+				j++;
+			}
+
+			// Llenar hijos que suben
+			j = 0;
+			for (int i = Medio + 1; i < Hijos.Count; i++)
+			{
+				Nodo.Hijos[j] = Hijos[i];
+				Hijos[i] = Utilidades.ApuntadorVacío;
+				j++;
+			}
+
+			Datos.RemoveAt(Datos.Count - 1);
+			Hijos.RemoveAt(Hijos.Count - 1);
 		}
 		#endregion
 
