@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BTree.Util;
 
 namespace BTree.Obj
 {
-	public class Encabezado
+	public class Header
 	{
-		public int Raiz { get; set; }
-		public int SiguientePosicion { get; set; }
-		public int Orden { get; set; }
+		public int Root { get; set; }
+		public int NextPosition { get; set; }
+		public int Order { get; set; }
 
 		public static int FixedSize { get { return 34; } }
 		// Raiz + Orden + SiguientePosicion + \r\n
 
 		public string ToFixedSizeString()
 		{
-			return $"{Raiz.ToString("0000000000;-000000000")}|{Orden.ToString("0000000000;-000000000")}|{SiguientePosicion.ToString("0000000000;-000000000")}\r\n";
+			return $"{Root.ToString("0000000000;-000000000")}" + Utilities.Separator.ToString()
+				+ $"{Order.ToString("0000000000;-000000000")}" + Utilities.Separator.ToString()
+				+ $"{NextPosition.ToString("0000000000;-000000000")}\r\n";
 		}
 
 		public int FixedSizeText

@@ -45,13 +45,13 @@
     <Compile Include="BT.cs" />
     <Compile Include="Interfaz\ICreateFixedSizeText.cs" />
     <Compile Include="Interfaz\IFixedSizeText.cs" />
-    <Compile Include="Nodo.cs" />
-    <Compile Include="Objeto\Encabezado.cs" />
-    <Compile Include="Objeto\Objeto.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="Objeto\Header.cs" />
+    <Compile Include="Objeto\Object.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\ByteGenerator.cs" />
-    <Compile Include="Util\Utilidades.cs" />
+    <Compile Include="Util\Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

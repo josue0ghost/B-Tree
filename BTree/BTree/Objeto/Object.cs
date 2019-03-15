@@ -8,13 +8,13 @@ using BTree.Interfaz;
 
 namespace BTree.Obj
 {
-	public class Objeto: IComparable, IFixedSizeText
+	public class Object: IComparable, IFixedSizeText
 	{
 		public int Id { get; set; }
 
 		public int CompareTo(object obj)
 		{
-			var s2 = (Objeto)obj;
+			var s2 = (Object)obj;
 			return Id.CompareTo(s2.Id);
 		}
 

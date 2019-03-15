@@ -7,9 +7,10 @@ using BTree.Obj;
 
 namespace BTree.Util
 {
-	class Utilidades
+	class Utilities
 	{
-		public static int TamañoEnteros = 10;
-		public static int ApuntadorVacío = int.MinValue;
+		public static int IntegerSize = 10;
+		public static int NullPointer = int.MinValue;
+		public static char Separator = '|';
 	}
 }

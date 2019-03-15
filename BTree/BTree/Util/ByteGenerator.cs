@@ -18,7 +18,7 @@ namespace BTree.Util
 			return Encoding.ASCII.GetString(bytes);
 		}
 
-		public static byte[] ConverToBytes(char[] text)
+		public static byte[] ConvertToBytes(char[] text)
 		{
 			return Encoding.ASCII.GetBytes(text);
 		}

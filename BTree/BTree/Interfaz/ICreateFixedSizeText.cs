@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BTree.Interfaz
 {
-	interface ICreateFixedSizeText<T> where T: IFixedSizeText
+	public interface ICreateFixedSizeText<T> where T: IFixedSizeText
 	{
-		T Crear(string FixedSizeText);
-		T CrearNulo();
+		T Create(string FixedSizeText);
+		T CreateNull();
 	}
 }
