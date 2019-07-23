@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BT.cs" />
+    <Compile Include="CreateObject.cs" />
     <Compile Include="Interfaz\ICreateFixedSizeText.cs" />
     <Compile Include="Interfaz\IFixedSizeText.cs" />
     <Compile Include="Node.cs" />

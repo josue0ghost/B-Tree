@@ -11,10 +11,8 @@ namespace BTree
 	{
 		static void Main(string[] args)
 		{
-			BT<Obj.Object> bT_G3 = new BT<Obj.Object>();
+			BT<Obj.Object> bT_G3 = new BT<Obj.Object>(3, "", new CreateObject());
 
-
-			//bT_G3.IniciarArbol(3);
 		}
 	}
 }
